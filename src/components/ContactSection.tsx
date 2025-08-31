@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Button from '@/components/ui/Button';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -43,10 +42,10 @@ const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
     setFormData({
       name: '',
@@ -74,7 +73,7 @@ const ContactSection: React.FC = () => {
             <span className="text-gradient-primary">Journey Today</span>
           </h2>
           <p className="text-xl text-[var(--gray-700)] max-w-3xl mx-auto">
-            Ready to book a session, rent a court, or learn more about our programs? We're here to help you get started.
+            Ready to book a session, rent a court, or learn more about our programs? We&apos;re here to help you get started.
           </p>
         </div>
 
@@ -84,7 +83,7 @@ const ContactSection: React.FC = () => {
             <h3 className="text-2xl font-bold text-[var(--gray-900)] mb-6 font-[var(--font-poppins)]">
               Send Us a Message
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name and Email */}
               <div className="grid md:grid-cols-2 gap-4">
@@ -196,14 +195,13 @@ const ContactSection: React.FC = () => {
               </div>
 
               {/* Submit Button */}
-              <Button
+              <button
                 type="submit"
-                size="lg"
-                className="w-full transform hover:scale-105 transition-all duration-300"
+                className="w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-black text-lg tracking-wide hover:scale-105 transition-all duration-300 shadow-lg shadow-orange-500/20"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending Message...' : 'Send Message'}
-              </Button>
+              </button>
             </form>
           </div>
 
@@ -214,7 +212,7 @@ const ContactSection: React.FC = () => {
               <h3 className="text-2xl font-bold text-[var(--gray-900)] mb-6 font-[var(--font-poppins)]">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -270,29 +268,29 @@ const ContactSection: React.FC = () => {
               <h3 className="text-2xl font-bold mb-6 font-[var(--font-poppins)]">
                 Quick Actions
               </h3>
-              
+
               <div className="space-y-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full border-white text-white hover:bg-white hover:text-[var(--primary)] justify-start"
+                <a
+                  href="https://picklehub-court-reservation.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center w-full px-6 py-4 border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-orange-500 transition-all"
                 >
                   📅 Book a Court Online
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full border-white text-white hover:bg-white hover:text-[var(--primary)] justify-start"
+                </a>
+                <a
+                  href="https://picklehub-court-reservation.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center w-full px-6 py-4 border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-orange-500 transition-all"
                 >
                   🎓 Schedule a Lesson
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full border-white text-white hover:bg-white hover:text-[var(--primary)] justify-start"
+                </a>
+                <button
+                  className="flex items-center w-full px-6 py-4 border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white hover:text-orange-500 transition-all"
                 >
                   🏟️ Tour Our Facility
-                </Button>
+                </button>
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/20">

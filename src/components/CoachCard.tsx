@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Coach } from '@/types/coach';
-import Button from '@/components/ui/Button';
 
 interface CoachCardProps {
   coach: Coach;
@@ -22,9 +20,8 @@ const CoachCard: React.FC<CoachCardProps> = ({ coach, featured = false }) => {
   };
 
   return (
-    <div className={`group relative bg-white rounded-2xl shadow-sport hover:shadow-sport-hover transform hover:-translate-y-2 transition-all duration-300 overflow-hidden ${
-      featured ? 'ring-4 ring-[var(--primary)] ring-opacity-50' : ''
-    }`}>
+    <div className={`group relative bg-white rounded-2xl shadow-sport hover:shadow-sport-hover transform hover:-translate-y-2 transition-all duration-300 overflow-hidden ${featured ? 'ring-4 ring-[var(--primary)] ring-opacity-50' : ''
+      }`}>
       {featured && (
         <div className="absolute top-4 right-4 z-10">
           <span className="bg-gradient-primary text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -62,9 +59,8 @@ const CoachCard: React.FC<CoachCardProps> = ({ coach, featured = false }) => {
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className={`w-4 h-4 ${
-                  i < Math.floor(coach.rating) ? 'text-[var(--energy-yellow)]' : 'text-gray-300'
-                }`}
+                className={`w-4 h-4 ${i < Math.floor(coach.rating) ? 'text-[var(--energy-yellow)]' : 'text-gray-300'
+                  }`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -105,22 +101,18 @@ const CoachCard: React.FC<CoachCardProps> = ({ coach, featured = false }) => {
 
         {/* Action Buttons */}
         <div className="flex gap-3">
-          <Button
-            variant="primary"
-            size="sm"
-            className="flex-1"
+          <button
             onClick={handleBookSession}
+            className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold hover:opacity-90 transition-all"
           >
             Book Session
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1"
+          </button>
+          <button
             onClick={handleViewProfile}
+            className="flex-1 px-4 py-2 bg-white/10 text-gray-700 rounded-xl font-bold border border-gray-200 hover:bg-gray-100 transition-all"
           >
             View Profile
-          </Button>
+          </button>
         </div>
       </div>
 

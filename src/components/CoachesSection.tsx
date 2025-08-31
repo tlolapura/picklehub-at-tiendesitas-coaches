@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import CoachCard from '@/components/CoachCard';
-import Button from '@/components/ui/Button';
 import { coaches } from '@/data/coaches';
 
 const CoachesSection: React.FC = () => {
@@ -13,8 +12,8 @@ const CoachesSection: React.FC = () => {
   const allSpecialties = ['All', ...new Set(coaches.flatMap(coach => coach.specialties))];
 
   // Filter coaches based on selected specialty
-  const filteredCoaches = selectedSpecialty === 'All' 
-    ? coaches 
+  const filteredCoaches = selectedSpecialty === 'All'
+    ? coaches
     : coaches.filter(coach => coach.specialties.includes(selectedSpecialty));
 
   // Show only first 6 coaches unless "Show All" is clicked
@@ -44,11 +43,10 @@ const CoachesSection: React.FC = () => {
               <button
                 key={specialty}
                 onClick={() => setSelectedSpecialty(specialty)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                  selectedSpecialty === specialty
-                    ? 'bg-[var(--primary)] text-white shadow-sport'
-                    : 'bg-white text-[var(--gray-700)] hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]'
-                }`}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${selectedSpecialty === specialty
+                  ? 'bg-[var(--primary)] text-white shadow-sport'
+                  : 'bg-white text-[var(--gray-700)] hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]'
+                  }`}
               >
                 {specialty}
               </button>
@@ -70,14 +68,12 @@ const CoachesSection: React.FC = () => {
         {/* Show More/Less Button */}
         {filteredCoaches.length > 6 && (
           <div className="text-center">
-            <Button
-              variant="outline"
-              size="lg"
+            <button
               onClick={() => setShowAll(!showAll)}
-              className="transform hover:scale-105 transition-all duration-300"
+              className="px-6 py-3 bg-white text-gray-700 rounded-xl font-bold border border-gray-200 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
             >
               {showAll ? 'Show Less' : `Show All ${filteredCoaches.length} Coaches`}
-            </Button>
+            </button>
           </div>
         )}
 

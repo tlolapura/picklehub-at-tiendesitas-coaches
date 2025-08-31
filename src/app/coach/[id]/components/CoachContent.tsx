@@ -159,7 +159,7 @@ export function CoachContent({ id, isScrolled }: CoachContentProps) {
                           </svg>
                         ))}
                       </div>
-                      <p className="text-gray-300 italic mb-4">"{testimonial.content}"</p>
+                      <p className="text-gray-300 italic mb-4">&quot;{testimonial.content}&quot;</p>
                       <div className="flex flex-col">
                         <span className="font-bold text-white">{testimonial.name}</span>
                         {testimonial.role && (
