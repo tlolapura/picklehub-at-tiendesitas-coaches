@@ -1,11 +1,18 @@
 import React from 'react';
 import { ScrollHandler } from './components/ScrollHandler';
 import { CoachContent } from './components/CoachContent';
+import { use } from 'react';
 
-export default function CoachPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function CoachPage({ params }: PageProps) {
+  const { id } = use(params);
+
   return (
     <ScrollHandler>
-      <CoachContent id={params.id} isScrolled={false} />
+      <CoachContent id={id} isScrolled={false} />
     </ScrollHandler>
   );
 }
